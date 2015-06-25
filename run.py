@@ -27,6 +27,10 @@ with File('example_for_1.1.h5', 'w',author='Pierre', creator='run.py') as f:
     mass = np.ones((N,))*100.0
     element(f.all, 'mass', store='fixed', data=mass)
 
+    charge = np.ones((N,))*5.
+    element(f.all, 'charge', store='fixed', data=charge)
+    f.all['charge'].attrs['type'] = 'effective'
+
     idx_all = np.arange(N)
     idx_list = np.random.choice(idx_all, 5)
     idx_e = element(f.observables, 'idx_list', store='linear', step=10, data=idx_list)
