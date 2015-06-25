@@ -33,7 +33,7 @@ with File('example_for_1.1.h5', 'w',author='Pierre', creator='run.py') as f:
 
     idx_all = np.arange(N)
     idx_list = np.random.choice(idx_all, 5)
-    idx_e = element(f.observables, 'idx_list', store='linear', step=10, data=idx_list)
+    idx_e = element(f.connectivity, 'idx_list', store='linear', step=10, data=idx_list)
     idx_e.attrs['particles_group'] = f.all.ref
 
     pairs = np.random.randint(0, N, (11, 2))
